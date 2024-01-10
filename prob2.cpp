@@ -1,37 +1,26 @@
-#include <iostream>
-#include <vector>
-
+#include<bits/stdc++.h>
 using namespace std;
-
-int main() {
+int main()
+{
     int t;
-    cin >> t;
-
-    for (int test_case = 0; test_case < t; ++test_case) {
+    cin>>t;
+    while(t--)
+    {
+        int f=0;
         int n;
-        cin >> n;
-
-        vector<int> a(n);
-        for (int i = 0; i < n; ++i) {
-            cin >> a[i];
-        }
-
-        // Iterate through the array to find the required index
-        bool found = false;
-        for (int i = 1; i < n - 1; ++i) {
-            if (a[i - 1] < a[i] && a[i] > a[i + 1]) {
-                found = true;
-                break;
+        cin>>n;
+        for(int i=2;i<n;i++)
+        {
+            if(n%i==0)
+            {
+                f=1;
             }
         }
-
-        // Output the result for the current test case
-        if (found) {
-            cout << "YES\n";
-        } else {
-            cout << "NO\n";
+        if(f==1)
+        {
+            cout <<"No"<<endl;
+        }else{
+            cout <<"Yes"<<endl;
         }
     }
-
-    return 0;
 }
